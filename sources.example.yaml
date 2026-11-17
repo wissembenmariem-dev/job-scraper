@@ -1,0 +1,34 @@
+timezone: Europe/Brussels
+close_after_days: 2
+
+filters:
+  keywords: [software engineer, backend engineer, data engineer, devops, site reliability]
+  exclude_keywords: [intern, internship]
+  locations: [brussels, bruxelles, brussel, belgium, remote]
+
+categories:
+  Engineering: [engineer, developer, devops, reliability]
+  Data: [data, analytics, machine learning]
+
+sources:
+  workday:
+    - company: Example Corp
+      host: examplecorp.wd3.myworkdayjobs.com
+      tenant: examplecorp
+      site: External
+      search: engineer
+  oracle_hcm:
+    - company: Sample Industries
+      base: https://example.fa.em2.oraclecloud.com
+      site: CX_1
+  html:
+    - company: Acme Software
+      url: https://careers.example.com/jobs
+      selectors:
+        item: .job-card
+        title: h3
+        link: a[href]
+        location: .job-location
+    - company: Globex
+      url: https://www.example.org/careers
+      default_location: Brussels
